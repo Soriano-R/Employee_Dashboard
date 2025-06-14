@@ -1,5 +1,4 @@
 scikit-learn==1.5.2
-python-fasthtml==0.8.0     
 matplotlib==3.9.2
 scipy==1.14.1
 numpy==2.1.2
@@ -13,4 +12,4 @@ ipython
 # The “-e” flag means “editable”, so changes in source code are
 # picked up immediately without reinstalling.
 # ──────────────────────────────────────────────────────────────
--e ./python-package
+-e ./python-packagepython-fasthtml<0.7
