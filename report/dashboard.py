@@ -4,7 +4,8 @@ and predicted recruitment risk.
 Run locally with:
     uvicorn report.dashboard:app --reload
 """
-from fasthtml import FastHTML, h
+from fasthtml import FastHTML
+from fasthtml.html import h
 from fasthtml.components import (Dropdown, Card, DataTable,
                                  FormGroup, MatplotlibViz)
 import matplotlib.pyplot as plt
