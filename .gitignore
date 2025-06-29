@@ -1,0 +1,38 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment directories
+.env/
+.venv/
+env/
+venv/
+dashboard_env/
+
+# Distribution / packaging
+*.egg-info/
+build/
+dist/
+
+# macOS Finder metadata
+.DS_Store
+
+# VSCode and other editor configs
+.vscode/
+*.swp
+
+# Python compiled files
+*.pyo
+
+# Local SQLite database
+*.db
+
+# Jupyter notebook checkpoints
+.ipynb_checkpoints/
+
+# Generated chart images
+assets/chart_*.png
+
+# Logs
+*.log
