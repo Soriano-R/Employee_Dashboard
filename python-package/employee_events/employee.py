@@ -21,5 +21,14 @@ class Employee(QueryBase):
 
     @pandas_query
     def full_name(self, employee_id: int):
-        return ("SELECT first_name || ' ' || last_name AS full_name "
-                "FROM employee WHERE employee_id = {employee_id}".format(employee_id=employee_id))
+        return (
+            "SELECT first_name || ' ' || last_name AS full_name "
+            f"FROM employee WHERE employee_id = {employee_id}"
+        )
+
+    @pandas_query
+    def names(self):
+        return (
+            "SELECT employee_id, first_name || ' ' || last_name AS name "
+            "FROM employee ORDER BY name"
+        )

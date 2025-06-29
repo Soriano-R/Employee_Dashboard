@@ -25,4 +25,13 @@ class Team(QueryBase):
 
     @pandas_query
     def team_name(self, team_id: int):
-        return f"SELECT team_name FROM team WHERE team_id = {team_id}"
+        return (
+            f"SELECT team_name FROM team WHERE team_id = {team_id}"
+        )
+
+    @pandas_query
+    def names(self):
+        return (
+            "SELECT team_id, team_name AS name "
+            "FROM team ORDER BY name"
+        )

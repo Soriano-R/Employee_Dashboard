@@ -1,5 +1,29 @@
 body {
-    margin-top: 5%;
-    margin-left: 25%;
-    height: 100%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f8f9fa;
+  color: #212529;
+  margin: 40px;
+}
+
+h1, h2 {
+  color: #0056b3;
+}
+
+select, input, button {
+  font-size: 16px;
+  padding: 5px 10px;
+  margin: 10px 0;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+ul li {
+  background-color: #ffffff;
+  margin: 5px 0;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
 }

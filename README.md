@@ -1,81 +1,103 @@
+# Employee Performance Dashboard
 
-# Software Engineering for Data Scientists 
+This project implements an interactive web-based dashboard for exploring employee performance events. It allows filtering employees by team, viewing individual performance charts, and inspecting recent manager notes.
 
-This repository contains starter code for the **Software Engineering for Data Scientists** final project. Please reference your course materials for documentation on this repository's structure and important files. Happy coding!
+The dashboard uses FastHTML for building HTML components directly in Python, and SQLite for persistent data storage.
 
-### Repository Structure
+## Features
+
+- List employees with 4-digit IDs
+- Filter employees by team using a dropdown
+- Navigate to individual employee detail pages
+- View performance charts showing positive and negative events over time
+- Display recent manager notes
+- Back to Main Page button on detail views
+- Colorblind-friendly plots
+- Fully responsive and minimal design
+
+## Repository Structure
+
+.
+├── assets/
+│   └── chart_<uuid>.png        # Generated performance charts
+├── python-package/
+│   └── employee_events/
+│       └── employee_events.db  # SQLite database with employee and event data
+├── report/
+│   └── dashboard.py            # Main dashboard code
+├── requirements.txt            # Project dependencies
+├── README.md                   # Project documentation (this file)
+└── ...
+
+## Installation
+
+Create and activate a Python virtual environment:
+
+python -m venv dashboard_env
+source dashboard_env/bin/activate  # macOS/Linux
+# or
+dashboard_env\Scripts\activate     # Windows
+
+Install required packages:
+
+pip install -r requirements.txt
+
+## Running the Dashboard
+
+Start the FastHTML server via Uvicorn:
+
+python -m uvicorn report.dashboard:app --reload
+
+Then visit http://127.0.0.1:8000 in your web browser.
+
+## Data
+
+Employee and team information comes from the SQLite database at python-package/employee_events/employee_events.db, which includes:
+
+- employee table: employee IDs, names, and team assignments.
+- team table: team IDs, names, and manager names.
+- employee_events table: historical positive and negative events for each employee.
+- notes table: recent manager comments on employee performance.
+
+The dashboard queries this database to dynamically populate employee lists, team filters, and individual charts.
+
+## Charts
+
+Performance charts are generated with Matplotlib using colorblind-friendly color schemes (#0072B2 for positive events, #D55E00 for negative events). Charts show monthly event counts with date axes formatted for readability.
+
+## Filtering
+
+On the main page:
+- Select a team from the dropdown to filter employees.
+- Select All Teams to show every employee.
+
+## Navigation
+
+- Click an employee entry to view details, including performance trends and manager notes.
+- Use the Back to Main Page link (top-right of detail pages) to return to the employee list.
+
+## Notes
+
+- Adjust report/dashboard.py if your database file or schema changes.
+- The dashboard assumes employee event data is up-to-date in the SQLite database.
+
+## Project Inspiration
+
+This dashboard design was inspired in part by the [Udacity Data Science Dashboard Project](https://github.com/udacity/dsnd-dashboard-project). Concepts of interactive dashboards, employee-centric visualizations, and performance reporting informed the design and implementation of this project.
+
+To obtain the Udacity example project locally for reference, run:
+
 ```
-├── README.md
-├── assets
-│   ├── model.pkl
-│   └── report.css
-├── env
-├── python-package
-│   ├── employee_events
-│   │   ├── __init__.py
-│   │   ├── employee.py
-│   │   ├── employee_events.db
-│   │   ├── query_base.py
-│   │   ├── sql_execution.py
-│   │   └── team.py
-│   ├── requirements.txt
-│   ├── setup.py
-├── report
-│   ├── base_components
-│   │   ├── __init__.py
-│   │   ├── base_component.py
-│   │   ├── data_table.py
-│   │   ├── dropdown.py
-│   │   ├── matplotlib_viz.py
-│   │   └── radio.py
-│   ├── combined_components
-│   │   ├── __init__.py
-│   │   ├── combined_component.py
-│   │   └── form_group.py
-│   ├── dashboard.py
-│   └── utils.py
-├── requirements.txt
-├── start
-├── tests
-    └── test_employee_events.py
+git clone https://github.com/udacity/dsnd-dashboard-project.git
+cd dsnd-dashboard-project
 ```
 
-### employee_events.db
+You can then inspect their code and compare it with this implementation to see how different approaches to dashboarding are built.
 
-```mermaid
-erDiagram
+## Authors
 
-  employee {
-    INTEGER employee_id PK
-    TEXT first_name
-    TEXT last_name
-    INTEGER team_id
-    
-  }
+Developed as part of a data science capstone project.
 
-  employee_events {
-    TEXT event_date
-    INTEGER employee_id FK
-    INTEGER team_id FK
-    INTEGER positive_events
-    INTEGER negative_events
-  }
+## License
 
-  notes {
-    INTEGER employee_id PK
-    INTEGER team_id PK
-    TEXT note
-    TEXT note_date PK
-  }
-
-  team {
-    INTEGER team_id PK
-    TEXT team_name
-    TEXT shift
-    TEXT manager_name
-  }
-
-  team ||--o{ employee_events : "team_id"
-  employee ||--o{ employee_events : "employee_id"
-  notes }o--o{ employee_events : ""
-```
+This project is licensed under the MIT License — see the LICENSE.txt file for details.
