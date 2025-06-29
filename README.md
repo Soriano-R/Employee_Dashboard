@@ -18,7 +18,7 @@ The dashboard uses FastHTML for building HTML components directly in Python, and
 ## Correct Repository Structure
 
 Your project directory should look like this before pushing to GitHub:
-
+```
 Employee_Dashboard/
 ├── assets/
 │   ├── report.css
@@ -35,7 +35,7 @@ Employee_Dashboard/
 ├── requirements.txt
 ├── README.md
 └── ...
-
+```
 This structure ensures your repo shows all directories correctly on GitHub.
 
 ## Installation
