@@ -17,16 +17,20 @@ The dashboard uses FastHTML for building HTML components directly in Python, and
 
 ## Repository Structure
 
-.
+Employee_Dashboard/
 ├── assets/
-│   └── chart_<uuid>.png        # Generated performance charts
+│   └── chart_*.png, report.css
 ├── python-package/
 │   └── employee_events/
-│       └── employee_events.db  # SQLite database with employee and event data
+│       ├── __init__.py, employee.py, ...
+│       └── employee_events.db
 ├── report/
-│   └── dashboard.py            # Main dashboard code
-├── requirements.txt            # Project dependencies
-├── README.md                   # Project documentation (this file)
+│   ├── dashboard.py
+│   └── templates/
+│       ├── index.html
+│       └── detail.html
+├── requirements.txt
+├── README.md
 └── ...
 
 ## Installation
