@@ -11,10 +11,10 @@ The dashboard uses FastHTML for building HTML components directly in Python, and
 ## 📸 Application Screenshots
 
 ### Home Page
-![Dashboard Home](https://github.com/Soriano-R/Employee_Dashboard/blob/main/docs/dashboard_home.png?raw=true)
+![Dashboard Home](https://github.com/Soriano-R/Employee_Dashboard/blob/main/docs/dashboard_home.png)
 
 ### Employee Detail Page
-![Employee Detail](https://github.com/Soriano-R/Employee_Dashboard/blob/main/docs/employee_detail.png?raw=true)
+![Employee Detail](https://github.com/Soriano-R/Employee_Dashboard/blob/main/docs/employee_detail.png)
 
 ## What Was Done
 
