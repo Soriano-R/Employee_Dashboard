@@ -15,15 +15,18 @@ The dashboard uses FastHTML for building HTML components directly in Python, and
 - Colorblind-friendly plots
 - Fully responsive and minimal design
 
-## Repository Structure
+## Correct Repository Structure
+
+Your project directory should look like this before pushing to GitHub:
 
 Employee_Dashboard/
 ├── assets/
-│   └── chart_*.png, report.css
+│   ├── report.css
+│   └── chart_<uuid>.png        # Generated performance charts
 ├── python-package/
 │   └── employee_events/
 │       ├── __init__.py, employee.py, ...
-│       └── employee_events.db
+│       └── employee_events.db  # SQLite database
 ├── report/
 │   ├── dashboard.py
 │   └── templates/
@@ -32,6 +35,8 @@ Employee_Dashboard/
 ├── requirements.txt
 ├── README.md
 └── ...
+
+This structure ensures your repo shows all directories correctly on GitHub.
 
 ## Installation
 
