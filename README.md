@@ -4,6 +4,18 @@ This project implements an interactive web-based dashboard for exploring employe
 
 The dashboard uses FastHTML for building HTML components directly in Python, and SQLite for persistent data storage.
 
+## 🎥 Application Demo
+
+[![Watch the Demo](https://img.shields.io/badge/Video-Demo-blue)](https://app.screencast.com/DGQPc0bQ2dgfC)
+
+## 📸 Application Screenshots
+
+### Home Page
+![Dashboard Home](https://github.com/Soriano-R/Employee_Dashboard/blob/main/docs/dashboard_home.png?raw=true)
+
+### Employee Detail Page
+![Employee Detail](https://github.com/Soriano-R/Employee_Dashboard/blob/main/docs/employee_detail.png?raw=true)
+
 ## What Was Done
 
 - **Database Creation**: Built a normalized SQLite database containing tables for employees, teams, events, and manager notes. Populated with synthetic data for demonstration.
