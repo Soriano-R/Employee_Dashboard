@@ -101,7 +101,7 @@ You can then inspect their code and compare it with this implementation to see h
 
 ## Authors
 
-Developed as part of a data science capstone project.
+Developed as part of a data science project.
 
 ## License
 
