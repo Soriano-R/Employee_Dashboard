@@ -4,34 +4,48 @@ This project implements an interactive web-based dashboard for exploring employe
 
 The dashboard uses FastHTML for building HTML components directly in Python, and SQLite for persistent data storage.
 
-## Features
+## What Was Done
 
-- List employees with 4-digit IDs
-- Filter employees by team using a dropdown
-- Navigate to individual employee detail pages
-- View performance charts showing positive and negative events over time
-- Display recent manager notes
-- Back to Main Page button on detail views
-- Colorblind-friendly plots
-- Fully responsive and minimal design
+- **Database Creation**: Built a normalized SQLite database containing tables for employees, teams, events, and manager notes. Populated with synthetic data for demonstration.
+- **Object-Oriented Design**: Implemented Employee and Team classes to abstract data access.
+- **Dashboard Layout**: Designed an employee list page with team filter dropdown, styled with basic CSS, and employee detail pages with charts.
+- **Event Charting**: Created colorblind-friendly bar charts using Matplotlib showing monthly positive and negative events for employees.
+- **Routing & Templates**: Developed routes for the main page and detail pages using FastAPI and Jinja2 templates.
+- **Filter Functionality**: Added dropdown to filter employees by team; when 'All Teams' is selected, all employees are shown.
+- **Navigation**: Added a Back to Main Page link at the top-right corner of employee detail pages.
+- **Readability Improvements**: Reformatted date axes on charts, displayed employee IDs in 4-digit format, and styled UI for a clean, corporate look.
 
 ## Repository Structure
-
-.
+```
+Employee_Dashboard/
 ├── assets/
+│   ├── report.css
 │   └── chart_<uuid>.png        # Generated performance charts
 ├── python-package/
 │   └── employee_events/
-│       └── employee_events.db  # SQLite database with employee and event data
+│       ├── __init__.py, employee.py, ...
+│       └── employee_events.db  # SQLite database
 ├── report/
-│   └── dashboard.py            # Main dashboard code
-├── requirements.txt            # Project dependencies
-├── README.md                   # Project documentation (this file)
+│   ├── dashboard.py
+│   └── templates/
+│       ├── index.html
+│       └── detail.html
+├── requirements.txt
+├── README.md
 └── ...
+```
+This structure ensures your repo shows all directories correctly on GitHub.
 
-## Installation
+## Cloning and Running the Dashboard
 
-Create and activate a Python virtual environment:
+To clone this dashboard project and run it locally, execute:
+
+```
+git clone https://github.com/Soriano-R/Employee_Dashboard.git
+cd Employee_Dashboard
+```
+
+Then create and activate a virtual environment:
 
 python -m venv dashboard_env
 source dashboard_env/bin/activate  # macOS/Linux
@@ -42,13 +56,11 @@ Install required packages:
 
 pip install -r requirements.txt
 
-## Running the Dashboard
-
-Start the FastHTML server via Uvicorn:
+Finally, run the dashboard server:
 
 python -m uvicorn report.dashboard:app --reload
 
-Then visit http://127.0.0.1:8000 in your web browser.
+Visit http://127.0.0.1:8000 in your browser.
 
 ## Data
 
@@ -58,8 +70,6 @@ Employee and team information comes from the SQLite database at python-package/e
 - team table: team IDs, names, and manager names.
 - employee_events table: historical positive and negative events for each employee.
 - notes table: recent manager comments on employee performance.
-
-The dashboard queries this database to dynamically populate employee lists, team filters, and individual charts.
 
 ## Charts
 
@@ -75,11 +85,6 @@ On the main page:
 
 - Click an employee entry to view details, including performance trends and manager notes.
 - Use the Back to Main Page link (top-right of detail pages) to return to the employee list.
-
-## Notes
-
-- Adjust report/dashboard.py if your database file or schema changes.
-- The dashboard assumes employee event data is up-to-date in the SQLite database.
 
 ## Project Inspiration
 
