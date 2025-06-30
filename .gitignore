@@ -1,6 +1,7 @@
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
+*$py.class
 *.class
 
 # Virtual environment directories
@@ -25,7 +26,7 @@ dist/
 # Python compiled files
 *.pyo
 
-# Local SQLite database (if you don’t want to version it)
+# Local SQLite database
 *.db
 
 # Jupyter notebook checkpoints
