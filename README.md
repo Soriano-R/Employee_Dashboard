@@ -111,10 +111,6 @@ cd dsnd-dashboard-project
 
 You can then inspect their code and compare it with this implementation to see how different approaches to dashboarding are built.
 
-## Authors
-
-Developed as part of a data science project.
-
 ## License
 
 This project is licensed under the MIT License — see the LICENSE.txt file for details.
