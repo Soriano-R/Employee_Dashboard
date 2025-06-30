@@ -4,6 +4,18 @@ This project implements an interactive web-based dashboard for exploring employe
 
 The dashboard uses FastHTML for building HTML components directly in Python, and SQLite for persistent data storage.
 
+## 🎥 Application Demo
+
+[![Watch the Demo](https://img.shields.io/badge/Video-Demo-blue)](https://app.screencast.com/DGQPc0bQ2dgfC)
+
+## 📸 Application Screenshots
+
+### Home Page
+![Dashboard Home](docs/dashboard_home.png)
+
+### Employee Detail Page
+![Employee Detail](docs/employee_detail.png)
+
 ## What Was Done
 
 - **Database Creation**: Built a normalized SQLite database containing tables for employees, teams, events, and manager notes. Populated with synthetic data for demonstration.
@@ -98,10 +110,6 @@ cd dsnd-dashboard-project
 ```
 
 You can then inspect their code and compare it with this implementation to see how different approaches to dashboarding are built.
-
-## Authors
-
-Developed as part of a data science capstone project.
 
 ## License
 
